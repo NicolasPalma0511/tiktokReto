@@ -20,15 +20,24 @@ const Video = ({ videoId, userId, videoUrl }) => {
       startTimeRef.current = Date.now();
     };
 
+     const fixServerUrl = (url) => {
+      return url.replace('-80', '-3000');
+    };
+    
+    
     const handlePause = () => {
       const endTime = Date.now();
       if (startTimeRef.current !== null) {
         const timeSpent = (endTime - startTimeRef.current) / 1000;
-        axios.post('http://localhost:3000/api/watchtime', {
+    
+        const currentUrl = window.location.origin;
+        const modifiedUrl = fixServerUrl(currentUrl);
+    
+        axios.post(`${modifiedUrl}/api/watchtime`, {
           userId,
           videoId,
           timeSpent,
-        }).catch((error) => console.error('Error guardando el tiempo de visualización:', error));
+        }).catch((error) => console.error('Error el tiempo de visualización:', error));
       }
     };
 
