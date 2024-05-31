@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./TikTokFinalBackEnd
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/tiktokclone
+      - REDIS_URL=redis-17139.c16.us-east-1-2.ec2.redns.redis-cloud.com:17139
+    depends_on:
+      - mongodb
+    networks:
+      - tiktok-network
+
+  frontend:
+    build: ./TikTokFinal/tiktok-clone
+    ports:
+      - "80:80"
+    networks:
+      - tiktok-network
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - tiktok-network
+
+networks:
+  tiktok-network:
+
+volumes:
+  mongo-data:

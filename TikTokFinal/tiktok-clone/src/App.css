@@ -1,0 +1,199 @@
+/* App.css */
+body {
+  background-color: #1c1c1e;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu li svg {
+  margin-right: 10px;
+}
+
+.following {
+  margin-top: auto;
+}
+
+.following p {
+  font-weight: bold;
+}
+
+.following ul {
+  list-style: none;
+  padding: 0;
+}
+
+.following li {
+  margin: 5px 0;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: black;
+}
+
+.search-bar {
+  flex: 1;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.header-icon {
+  margin-left: 10px;
+  color: white;
+}
+
+.suggested-users {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+
+.user {
+  margin: 0 10px;
+}
+
+.scroll-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-button {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  outline: none;
+  z-index: 1;
+}
+
+.nav-button:disabled {
+  color: gray;
+  cursor: default;
+}
+
+.nav-button:first-of-type {
+  top: 10px;
+}
+
+.nav-button:last-of-type {
+  bottom: 10px;
+}
+
+.video-container {
+  position: relative;
+}
+
+.comments-list {
+  margin-top: 20px;
+}
+
+.comment-box {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.reply-box {
+  background-color: #444;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.comment-actions {
+  display: flex;
+  align-items: center;
+}
+
+.comment-action-button {
+  color: white;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.reply-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.comment-form {
+  margin-top: 20px;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  padding: 20px;
+  overflow: auto;
+  border: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: #1c1c1e;
+  color: white;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
