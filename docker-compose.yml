@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend:
-    build: ./TikTokFinalBackEnd
+    image: nicolaspalma/tiktokreto-backend:latest
     ports:
       - "3000:3000"
     environment:
@@ -14,7 +14,7 @@ services:
       - tiktok-network
 
   frontend:
-    build: ./TikTokFinal/tiktok-clone
+    image: nicolaspalma/tiktokreto-frontend:latest
     ports:
       - "80:80"
     networks:
